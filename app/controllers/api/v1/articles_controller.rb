@@ -28,6 +28,16 @@ class Api::V1::ArticlesController < ApplicationController
       render json: {error: "Artigo nao encontrado!"}, status: :not_found
     end
   end
+
+  def destroy
+    @article = Article.find_by(id: params[:id])
+
+    if @article
+      @article.destroy
+    else
+      render json: {error: "Nao foi possivel achar o artigo"}
+    end
+  end
   
   private
   def article_params

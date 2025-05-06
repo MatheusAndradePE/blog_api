@@ -29,6 +29,16 @@ class Api::V2::ArticlesController < ApplicationController
     end
   end
   
+  def destroy
+    @article = Article.find_by(id: params[:id])
+
+    if @article
+      @article.destroy
+    else
+      render json: {error: "Nao foi possivel achar o artigo"}
+    end
+  end
+
   private
   def article_params
     params.permit(:title, :body)
