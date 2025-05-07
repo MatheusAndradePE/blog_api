@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Versão do Rails
-gem "rails", "~> 7.1.0"  # Atualização para a versão 7.1.x do Rails
+gem "rails", "~> 8.0.2"  # Atualização para a versão 7.1.x do Rails
 
 # Banco de Dados
 gem "pg", "~> 1.1"  # Dependência para PostgreSQL
